@@ -1,0 +1,17 @@
+package com.oasys.employee.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.oasys.employee.entity.Employee;
+import com.oasys.employee.repositary.EmployeeRepositary;
+
+public class EmployeeDao {
+	@Autowired
+	EmployeeRepositary emprep;
+	
+	public String insertEmployee(Employee e) {
+		emprep.save(e);
+		return "Successfully Saved";
+	}
+
+}

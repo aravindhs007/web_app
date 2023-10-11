@@ -1,0 +1,31 @@
+package com.oasys.employee.repositary;
+
+
+
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.oasys.employee.entity.Employee;
+
+public interface EmployeeRepositary extends JpaRepository<Employee,Integer> {
+
+	@Query("SELECT u FROM Employee u WHERE u.status = 1")
+	Collection<Employee> findAllActiveUsers();
+
+	
+	@Query(value = "SELECT * FROM USERS u WHERE u.status = 1", 
+			  nativeQuery = true)
+			Collection<Employee> findAllActiveUsersNative();
+
+	@Query(value = "SELECT u FROM User u")
+	List<Employee> findAllUsers(Sort sort);
+
+
+	
+	
+
+}

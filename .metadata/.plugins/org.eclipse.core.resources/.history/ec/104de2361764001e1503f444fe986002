@@ -1,0 +1,21 @@
+package com.oasys.student.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+import com.oasys.student.entity.Student;
+
+public interface StudentRepositary extends JpaRepository<Employee,Integer> {
+
+	
+
+
+	
+	
+
+}
+
+
+

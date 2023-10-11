@@ -1,0 +1,5 @@
+package com.oasys.customer.service;
+
+public class CustomerService {
+
+}

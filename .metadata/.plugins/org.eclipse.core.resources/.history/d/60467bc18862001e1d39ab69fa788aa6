@@ -1,0 +1,12 @@
+package com.oasys.employee.dao;
+
+import com.oasys.employee.entity.Employee;
+
+public class EmployeeDao {
+
+	public String insertEmployee(Employee e) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,63 @@
+package com.oasys.employee.service;
+import java.util.Comparator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.oasys.employee.dao.EmployeeDao;
+import com.oasys.employee.entity.Employee;
+@Service
+public class EmployeeService {
+	@Autowired
+	EmployeeDao empdao;
+		public String insertEmployee(List<Employee> e) {
+			
+			return empdao.insertEmployee(e);
+		}
+		public Employee insertEmployees(int e) {
+			
+			return empdao.insertEmployees(e);
+		}
+		public List<Employee> fa() {
+			return empdao.fa();
+		}
+		public String uid(int e) {
+			return empdao.uid(e);
+		}
+		public String update(Employee e) {
+			
+			return empdao.update(e);
+		}
+		public List<Employee> getEmpByGender(String gender) {
+		List<Employee>allEmp=this.fa();	
+			return allEmp.stream().filter(x->x.getGender().equalsIgnoreCase(gender)).toList();
+		}
+		public List<Employee> getEmpBySalary(int salary) {
+			List<Employee>allEmp=this.fa();
+			return allEmp.stream().filter(y->y.getSalary()>=salary).toList();
+		}
+		public List<Integer> getMinAgeSalary(int age) {
+			List<Employee>allEmp=this.fa();
+			return allEmp.stream().filter(z->z.getAge()>=age).map(s->s.getSalary()).toList();
+		}
+		public List<Integer> getMaxSalaryName(int salary) {
+			List<Employee>allEmp=this.fa();
+			return allEmp.stream().filter(l->l.getSalary()>=salary).map(z->z.getAge()).toList();
+		}
+		public String getMaxAgeSalary(List<Employee> name) {
+	
+			Employee max=name.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).findFirst().get();
+			return max.getName();
+		}
+		public List<Employee> getSalIncrement(String gender) {
+			List<Employee>incre=this.fa();
+					gender.stream().filter(z->z.getGender().equalsIgnoreCase(gender)).filter(x->x.getSalary()*(5/100)).toList();
+			//return gender.stream().filter(z->z.getGender().equalsIgnoreCase(gender)).filter(x->x.getSalary()*(5/100)).toList();
+			
+		}
+		
+
+
+}
+

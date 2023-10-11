@@ -1,0 +1,20 @@
+package com.oasys.student.service;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.oasys.student.entity.Student;
+
+
+@Service
+public class StudentService {
+	@Autowired
+	public StudentService() {
+		// TODO Auto-generated constructor stub
+	} studao;
+	public List<Student> sl() {
+		
+		return studao.sl();
+	}
+
+}

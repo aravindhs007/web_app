@@ -1,0 +1,45 @@
+package com.example.demo;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ReverseString {
+	@GetMapping(value="/rev/{a}")
+	public String rev(@PathVariable String a) {
+		String b="";
+		for(int i=0;i<a.length();i++) {
+			b=a.charAt(i)+b;
+		}
+		return b;
+		}
+	
+	/*@RequestMapping("/api")
+	@GetMapping(value="/prime/{a}")
+	public int prime(@PathVariable int num) {
+		int num1=0;
+		for(int i=1;i<=num;i++) {
+			if(i%1==0 && i%i==0) {
+				num1=(i);
+			}
+		}
+		return num1;
+	}*/
+	
+    @GetMapping("/primeNumbers")
+    public List<Integer> printPrimeNumbers(int start, int end) {
+        List<Integer> primeNumbers = printPrimeNumbers(start, end);
+        primeNumbers.forEach(System.out::println);
+        return primeNumbers;
+    }
+	
+}
+
+	
+	
+
+

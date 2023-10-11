@@ -1,0 +1,12 @@
+package com.oasys.employee.repositary;
+
+import com.oasys.employee.entity.Employee;
+
+public interface EmployeeRepositary extends JPARepositary<Employee,Integer> {
+
+	public String insertEmployee(Employee e) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

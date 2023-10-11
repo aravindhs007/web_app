@@ -1,0 +1,22 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ReverseString {
+	@GetMapping(value="/rev/{Aravindh}")
+	public String rev(@PathVariable String a) {
+		String b="";
+		for(int i=a.length();i>=0;i--) {
+			b=b+a.charAt(i);
+		}
+		return b;
+		}
+	}
+
+	
+	
+
+

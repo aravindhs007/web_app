@@ -1,0 +1,41 @@
+package com.oasys.employee.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.oasys.employee.entity.Employee;
+import com.oasys.employee.repositary.EmployeeRepositary;
+
+@Repository
+public class EmployeeDao {
+	@Autowired
+	EmployeeRepositary emprep;
+
+	public String insertEmployee(List<Employee> e) {
+		emprep.saveAll(e);
+		return "Successfully Saved";
+	}
+
+	public Employee insertEmployees(int e) {
+		return emprep.findById(e).get();
+		// return "Successfully Saved";
+	}
+
+	public List<Employee> fa() {
+
+		return emprep.findAll();
+	}
+
+	public String uid(int e) {
+		emprep.deleteById(e);
+		return "removed";
+	}
+
+	public Employee update(int e) {
+		emprep.saveAll(e);
+		return "Saved";
+	}
+
+}

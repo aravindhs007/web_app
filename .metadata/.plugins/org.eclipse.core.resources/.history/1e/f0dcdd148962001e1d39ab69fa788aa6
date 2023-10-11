@@ -1,0 +1,12 @@
+package com.oasys.employee.repositary;
+
+import com.oasys.employee.entity.Employee;
+
+public class EmployeeRepositary {
+
+	public String insertEmployee(Employee e) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.oasys.bank.dao;
+
+public class BankDao {
+
+}

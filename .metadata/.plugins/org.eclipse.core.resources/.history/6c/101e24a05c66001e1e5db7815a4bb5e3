@@ -1,0 +1,19 @@
+package com.oasys.customer.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.oasys.customer.entity.Customer;
+import com.oasys.customer.repository.CustomerRepository;
+@Repository
+public class CustomerDao {
+@Autowired
+CustomerRepository cusrepo;
+	public List<Customer> getAll() {
+		
+		return cusrepo.findAll();
+	}
+
+}

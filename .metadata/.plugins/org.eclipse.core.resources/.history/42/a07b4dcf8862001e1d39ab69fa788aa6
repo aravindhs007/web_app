@@ -1,0 +1,5 @@
+package com.oasys.employee.repositary;
+
+public class EmployeeRepositary {
+
+}

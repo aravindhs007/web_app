@@ -1,0 +1,33 @@
+package com.oasys.student.controller;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.oasys.student.entity.Student;
+import com.oasys.student.service.StudentService;
+
+
+@RestController
+@RequestMapping(value="/students")
+public class StudentController {
+	@Autowired
+	StudentService stuser;
+	@GetMapping(value="/list")
+	public List<Student> sl(@RequestBody List<Student> e) {
+		return stuser.sl(e);
+	}
+	@GetMapping(value="/getlist")
+	public List<Student> getall(){
+		return stuser.getall();
+	}
+	@GetMapping(value="/getbyname/{name}")
+	public List<Student> getbyname(@PathVariable String name) throws com.oasys.student.exception.NameNotFoundException  {
+	return  stuser.getEmployeeByName(name);
+	}
+	
+	
+	
+}

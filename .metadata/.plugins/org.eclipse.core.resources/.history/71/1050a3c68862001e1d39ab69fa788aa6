@@ -1,0 +1,14 @@
+package com.oasys.employee.service;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.oasys.employee.entity.Employee;
+public class EmployeeService {
+	@Autowired
+	EmployeeDao empdao;
+		public String insertEmployee(Employee e) {
+			
+			return empdao.insertEmployee(e);
+		}
+
+}
+

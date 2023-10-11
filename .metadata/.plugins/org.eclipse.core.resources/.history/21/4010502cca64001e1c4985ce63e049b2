@@ -1,0 +1,5 @@
+package com.oasys.bank.service;
+
+public class BankService {
+
+}

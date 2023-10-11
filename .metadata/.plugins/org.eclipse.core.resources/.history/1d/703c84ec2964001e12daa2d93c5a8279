@@ -1,0 +1,16 @@
+package com.oasys.student.exception;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.oasys.student.service.nameNotFoundException;
+
+@RestControllerAdvice
+public class GlobalExceptions {
+@ExceptionHandler(nameNotFoundException.class)
+public ResponseEntity<Object> namehandler(nameNotFoundException m1){
+	
+}
+}

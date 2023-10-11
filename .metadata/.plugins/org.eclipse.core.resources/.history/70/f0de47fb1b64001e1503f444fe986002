@@ -1,0 +1,23 @@
+package com.oasys.student.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.oasys.student.entity.Student;
+import com.oasys.student.service.StudentService;
+
+@RestController
+@RequestMapping(value="/students")
+public class StudentController {
+	@Autowired
+	StudentService stuser;
+	@GetMapping(value="/studentslist/{e}")
+	public List<Student> sl(List<Student>e) {
+		return stuser.sl(e);
+	}
+	
+}

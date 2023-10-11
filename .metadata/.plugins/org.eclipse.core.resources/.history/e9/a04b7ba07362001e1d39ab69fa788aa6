@@ -1,0 +1,14 @@
+package com.example.demo;
+
+import jakarta.annotation.Generated;
+@Entity
+@Table(name="employee_details")
+public class Employee {
+	@Id
+	@Generated value=(GenerationType:IDENTITY)
+	private int id;
+	private String name;
+	private int age;
+	private String gender;
+	private int salary;
+}

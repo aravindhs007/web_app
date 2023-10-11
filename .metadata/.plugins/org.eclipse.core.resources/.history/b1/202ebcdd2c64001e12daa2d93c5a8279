@@ -1,0 +1,9 @@
+package com.oasys.student.exception;
+
+
+public class nameNotFoundException extends Exception {
+	public nameNotFoundException(String msg) {
+		super(msg);
+	}
+	
+}

@@ -1,0 +1,28 @@
+package com.example.demo;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UseCar {
+	@GetMapping(value="/carDetails") 
+	/*public List<Car> getCar(@RequestBody List<Car> c) {
+		return c;
+	}*/
+	
+	public List<Car> getcar(@RequestBody List<Car>c) {
+		Car max= get(0);
+		for(int i=0;i<=c.size()-1;i++) {
+			if(max.getPrice()>c.getPrice()) {
+				max=i;
+			}
+		}
+		return max;
+	}
+	
+	
+	
+}

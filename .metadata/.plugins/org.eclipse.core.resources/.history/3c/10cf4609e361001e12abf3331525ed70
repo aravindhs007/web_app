@@ -1,0 +1,22 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UseCar {
+	@GetMapping(value="/carDetails") 
+	public Car getCar1(@RequestBody Car c) {
+		return c;
+	}
+	@GetMapping(value="/carDetails") 
+	public Car getCar2(@RequestBody Car d) {
+		return d;
+	}
+	@GetMapping(value="/carDetails") 
+	public Car getCar3(@RequestBody Car e) {
+		return e;
+	}
+	
+}

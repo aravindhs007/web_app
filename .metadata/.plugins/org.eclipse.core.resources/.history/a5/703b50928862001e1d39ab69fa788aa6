@@ -1,0 +1,5 @@
+package com.oasys.employee.dao;
+
+public class EmployeeDao {
+
+}

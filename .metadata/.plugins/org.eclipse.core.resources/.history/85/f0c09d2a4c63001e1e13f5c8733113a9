@@ -1,0 +1,41 @@
+package com.oasys.employee.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.oasys.employee.dao.EmployeeDao;
+import com.oasys.employee.entity.Employee;
+import java.util.List;
+@Service
+public class EmployeeService {
+	@Autowired
+	EmployeeDao empdao;
+		public String insertEmployee(List<Employee> e) {
+			
+			return empdao.insertEmployee(e);
+		}
+		public Employee insertEmployees(int e) {
+			
+			return empdao.insertEmployees(e);
+		}
+		public List<Employee> fa() {
+			return empdao.fa();
+		}
+		public String uid(int e) {
+			return empdao.uid(e);
+		}
+		public String update(Employee e) {
+			
+			return empdao.update(e);
+		}
+		public List<Employee> getEmpByGender(String gender) {
+		List<Employee>allEmp=this.fa();	
+			return allEmp.stream().filter(x->x.getGender().equalsIgnoreCase(gender)).toList();
+		}
+		public List<Employee> getEmpBySalary(int salary) {
+			List<Employee>allEmp=this.fa();
+			return allEmp.stream().filter(y->y.getSalary()>=salary).toList();
+		}
+
+
+}
+

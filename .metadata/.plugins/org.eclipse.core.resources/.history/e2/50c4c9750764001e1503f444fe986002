@@ -1,0 +1,5 @@
+package com.oasys.student.entity;
+
+public class Student {
+
+}

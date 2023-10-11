@@ -1,0 +1,23 @@
+package com.oasys.employee.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.oasys.employee.dao.EmployeeDao;
+import com.oasys.employee.entity.Employee;
+import java.util.List;
+@Service
+public class EmployeeService {
+	@Autowired
+	EmployeeDao empdao;
+		public String insertEmployee(List<Employee> e) {
+			
+			return empdao.insertEmployee(e);
+		}
+		public Employee insertEmployees(int e) {
+			
+			return empdao.insertEmployees(e);
+		}
+
+
+}
+

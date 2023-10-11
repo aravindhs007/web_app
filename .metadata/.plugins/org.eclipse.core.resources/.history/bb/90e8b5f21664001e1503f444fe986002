@@ -1,0 +1,16 @@
+package com.oasys.student.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.oasys.student.entity.Student;
+@Repository
+public class StudentDao {
+
+	public List<Student> sl() {
+		
+		return null;
+	}
+
+}
